@@ -1,0 +1,10 @@
+# Wallhaven images - no subir binarios
+Toplist/
+current.jpg
+current.png
+wallhaven-*.jpg
+wallhaven-*.png
+*.log
+.tmp.*
+.DS_Store
+Thumbs.db

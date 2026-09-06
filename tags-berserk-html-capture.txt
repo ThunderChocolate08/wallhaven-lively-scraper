@@ -1,0 +1,26 @@
+# Captura HTML sidebar wallhaven.cc - 23 tags - 2026-09-06
+# Fuente: <div class="sidebar-section" data-storage-id="showcase-tags"> + More like this
+id=1 | anime | Anime & Manga | https://wallhaven.cc/tag/1
+id=2278 | minimalism | Art & Design | https://wallhaven.cc/tag/2278
+id=240 | white | Miscellaneous > Colors | https://wallhaven.cc/tag/240
+id=20260 | Griffith (Berserk) | Anime & Manga > Characters | https://wallhaven.cc/tag/20260
+id=198 | simple background | Art & Design | https://wallhaven.cc/tag/198
+id=1387 | wings | Nature | https://wallhaven.cc/tag/1387
+id=37100 | Zodd (Berserk) | Anime & Manga > Characters | https://wallhaven.cc/tag/37100
+id=3836 | horns | Nature > Animals | https://wallhaven.cc/tag/3836
+id=740 | Moon | Location > Space | https://wallhaven.cc/tag/740
+id=24956 | full moon | Location > Space | https://wallhaven.cc/tag/24956
+id=4799 | moonlight | Nature > Landscapes | https://wallhaven.cc/tag/4799
+id=2506 | demon | Miscellaneous | https://wallhaven.cc/tag/2506
+id=67773 | bat wings | Miscellaneous | https://wallhaven.cc/tag/67773
+id=37101 | Kentaro Miura | People > Artists | https://wallhaven.cc/tag/37101
+id=179349 | Charlotte (Berserk) | Anime & Manga > Characters | https://wallhaven.cc/tag/179349
+id=3555 | flying | Miscellaneous | https://wallhaven.cc/tag/3555
+id=19043 | worm's eye view | Art & Design > Photography | https://wallhaven.cc/tag/19043
+id=369 | dark | Art & Design | https://wallhaven.cc/tag/369
+id=2575 | black background | Art & Design | https://wallhaven.cc/tag/2575
+id=879 | Berserk | Anime & Manga > Series | https://wallhaven.cc/tag/879
+id=178061 | manga panels | Art & Design > Digital | https://wallhaven.cc/tag/178061
+id=19948 | night sky | Nature > Landscapes | https://wallhaven.cc/tag/19948
+id=330 | manga | Anime & Manga | https://wallhaven.cc/tag/330
+more_like | https://wallhaven.cc/search?q=like%3A7jl91e
