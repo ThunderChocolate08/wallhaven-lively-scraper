@@ -1,3 +1,4 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Carlos\Pictures\Wallhaven\wallhaven-random.ps1" %*
+REM Replicable para cualquier usuario - usa %~dp0 (carpeta del script)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0wallhaven-random.ps1" %*
 pause

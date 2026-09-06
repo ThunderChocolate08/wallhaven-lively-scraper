@@ -1,17 +1,18 @@
-# Wallhaven Random -> Lively Wallpaper
-# Uso: powershell -ExecutionPolicy Bypass -File "D:\Carlos\Pictures\Wallhaven\wallhaven-random.ps1"
+# Wallhaven Random -> Lively Wallpaper (replicable)
+# Uso: powershell -ExecutionPolicy Bypass -File "%USERPROFILE%\Pictures\Wallhaven\wallhaven-random.ps1"
 #      con parametros: -Category 111 -Purity 100 -Ratios 16x9 -Query "spiderman"
-# Si no pasas -Query, lee uno aleatorio de topics.txt
+# Si no pasas -Query, lee uno aleatorio de topics.txt - replicable para cualquier usuario
 param(
   [string]$Category = "111",   # 100=General 010=Anime 001=People -> 111=todos
   [string]$Purity = "100",      # 100=SFW 010=Sketchy 001=NSFW
   [string]$Ratios = "16x9",     # vacio para todos, o 16x9,16x10,21x9 etc
   [string]$Query = "",          # ej "spiderman", "nature", "programming", "design system"
-  [int]$HistoryKeep = 20        # cuantos wallpapers guardar en historial
+  [int]$HistoryKeep = 20,       # cuantos wallpapers guardar en historial
+  [string]$WallhavenDir = (Join-Path ([Environment]::GetFolderPath("MyPictures")) "Wallhaven")
 )
 
 $ErrorActionPreference = "Stop"
-$wallhavenDir = "D:\Carlos\Pictures\Wallhaven"
+$wallhavenDir = $WallhavenDir
 $logFile = Join-Path $wallhavenDir "wallhaven.log"
 if (-not (Test-Path $wallhavenDir)) { New-Item -ItemType Directory -Path $wallhavenDir -Force | Out-Null }
 
@@ -69,8 +70,8 @@ try {
   $all = Get-ChildItem $wallhavenDir -File -Filter "wallhaven-*.jpg" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending
   if ($all.Count -gt $HistoryKeep) { $all | Select-Object -Skip $HistoryKeep | Remove-Item -Force -ErrorAction SilentlyContinue; Log "Historial limpiado" }
 
-  # Set con Lively
-  $lively = "C:\Users\Carlos\AppData\Local\Programs\Lively Wallpaper\Lively.exe"
+  # Set con Lively (ruta genérica para cualquier usuario)
+  $lively = Join-Path $env:LOCALAPPDATA "Programs\Lively Wallpaper\Lively.exe"
   if (Test-Path $lively) {
     $target = if (Test-Path $currentJpg) { $currentJpg } else { $current }
     Log "Set Lively: $target"

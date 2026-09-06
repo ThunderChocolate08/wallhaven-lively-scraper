@@ -1,16 +1,17 @@
-# Wallhaven Toplist -> D:\Carlos\Pictures\Wallhaven\Toplist -> Lively
-# Scrappea https://wallhaven.cc/toplist (via API) y asigna uno por default
+# Wallhaven Toplist -> <Pictures>\Wallhaven\Toplist -> Lively / Presentación
+# Scrappea https://wallhaven.cc/toplist (via API) - replicable para cualquier usuario
 param(
   [string]$TopRange = "1M",      # 1d,3d,1w,1M,3M,6M,1y
   [int]$Page = 0,                # 0=aleatorio entre 1,3,4 (etc.), o 1..85 fijo
   [string]$Category = "111",
   [string]$Purity = "100",
-  [int]$HistoryKeep = 500
+  [int]$HistoryKeep = 500,
+  [string]$WallhavenDir = (Join-Path ([Environment]::GetFolderPath("MyPictures")) "Wallhaven")
 )
 
 $ErrorActionPreference = "Stop"
-$dst = "D:\Carlos\Pictures\Wallhaven\Toplist"
-$log = "D:\Carlos\Pictures\Wallhaven\wallhaven.log"
+$dst = Join-Path $WallhavenDir "Toplist"
+$log = Join-Path $WallhavenDir "wallhaven.log"
 if (-not (Test-Path $dst)) { New-Item -ItemType Directory -Path $dst -Force | Out-Null }
 function Log($m){ $t=Get-Date -Format "yyyy-MM-dd HH:mm:ss"; "$t $m" | Out-File $log -Append; Write-Output $m }
 
@@ -48,7 +49,7 @@ try {
   # No se asigna wallpaper aquí para no interferir con Presentación de Windows (Toplist cada 10 min aleatorio)
   Log "Modo solo descarga: no se asigna wallpaper (Windows Presentación activo)"
   $allFiles = Get-ChildItem $dst -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -match "jpg|png" }
-  Log "Toplist total: $($allFiles.Count) archivos en $dst"
+  Log "Toplist total: $($allFiles.Count) archivos en $dst (replicable: %USERPROFILE%\Pictures\Wallhaven\Toplist)"
   Write-Output "OK Toplist p$Page ($downloaded nuevos) - solo descarga, Windows Presentación activo"
 } catch {
   Log "ERROR Toplist: $_"
